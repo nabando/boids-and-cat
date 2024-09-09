@@ -1,0 +1,41 @@
+body {
+    min-height: 100vh; /*This fixed the cat problem somehow ?*/
+    background-color: rgb(4, 0, 15);
+    cursor: url('catMouthCloseCursor.png'), none;
+}
+
+.boidText {
+    /*text formatting*/
+    color: rgb(255, 169, 183);
+    font-size: xx-large;
+    font-weight: bolder;
+    font-style: oblique;
+    
+    /*not 100% sure what this does but I'm pretty sure formatting messes up if I don't have this*/
+    margin: 0;
+    position: absolute;
+
+    /*these two move the top left corner of the text to the center of the window*/
+    top: 50%;
+    left: 50%;
+
+    /*this moves the text to the center (the previous two steps moved the top left corner to the center, so the text is just slightly off)*/
+    transform: translate(-50%, -50%);
+
+    /*this makes it not possible to highlight the text, convenient for spawning the boids on top of words. Stops user from accidentially highlighting "boids !"*/
+    user-select: none;
+}
+
+.boid {
+    /*background-color: rgb(250, 134, 153);*/
+    width: 0;
+    height: 0;
+    position: absolute;
+
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 20px solid rgb(190, 56, 78);
+
+    /*centers boid*/
+    transform: translate(-50%, -50%);
+}
